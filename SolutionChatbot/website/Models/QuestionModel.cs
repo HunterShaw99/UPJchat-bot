@@ -2,7 +2,8 @@
 {
     public class QuestionModel
     {
-        public bool answeredCorrectly { get; set; }
-        public string question { get; set; }
+        public long Id { get; set; }
+        public bool AnsweredCorrectly { get; set; }
+        public string? Question { get; set; }
     }
 }

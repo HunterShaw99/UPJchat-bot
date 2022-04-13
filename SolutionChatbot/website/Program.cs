@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using website.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<QuestionContext>(opt=>
+    opt.UseInMemoryDatabase("QuestionList"));
 
 var app = builder.Build();
 
