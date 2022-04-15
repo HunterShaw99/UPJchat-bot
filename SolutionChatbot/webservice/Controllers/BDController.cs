@@ -1,83 +1,29 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using website.Models;
 
 namespace webservice.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class BDController : Controller
     {
-        // GET: BDController
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        // GET: BDController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet]
+        public String Get()
         {
-            return View();
+            return "Hello";
         }
-
-        // GET: BDController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BDController/Create
+        /*
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult<QuestionModel>> PostQuestionModel(QuestionModel questionItem)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            _context.QuestionItems.Add(questionItem);
+            await _context.SaveChangesAsync();
 
-        // GET: BDController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetTodoItem), new { question = questionItem.question }, questionItem);
         }
-
-        // POST: BDController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BDController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: BDController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        */
     }
 }
