@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<QuestionContext>(opt =>
-    opt.UseInMemoryDatabase("QuestionList"));
+    opt.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunte\source\repos\upjchatbot\SolutionChatbot\webservice\DataBase\ChatBotStorage.mdf;Integrated Security=True"));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -1,0 +1,1 @@
+﻿SELECT question, qID, helpful, nonhelpful FROM Questions FOR JSON Auto;

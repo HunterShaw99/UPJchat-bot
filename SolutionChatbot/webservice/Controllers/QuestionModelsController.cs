@@ -26,14 +26,14 @@ namespace webservice.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<QuestionModel>>> GetQuestionItems()
         {
-            return await _context.QuestionItems.ToListAsync();
+            return await _context.Questions.ToListAsync();
         }
 
         // GET: api/QuestionModels/5
         [HttpGet("{id}")]
         public async Task<ActionResult<QuestionModel>> GetQuestionModel(long id)
         {
-            var questionModel = await _context.QuestionItems.FindAsync(id);
+            var questionModel = await _context.Questions.FindAsync(id);
 
             if (questionModel == null)
             {
@@ -56,7 +56,7 @@ namespace webservice.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutQuestionModel(long id, QuestionModel questionModel)
         {
-            if (id != questionModel.Id)
+            if (id != questionModel.qID)
             {
                 return BadRequest();
             }
@@ -94,10 +94,10 @@ namespace webservice.Controllers
         [HttpPost]
         public async Task<ActionResult<QuestionModel>> PostQuestionModel(QuestionModel questionModel)
         {
-            _context.QuestionItems.Add(questionModel);
+            _context.Questions.Add(questionModel);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetQuestionModel), new { id = questionModel.Id }, questionModel);
+            return CreatedAtAction(nameof(GetQuestionModel), new { id = questionModel.qID }, questionModel);
         }
 
         // DELETE: api/QuestionModels/5
@@ -105,13 +105,13 @@ namespace webservice.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestionModel(long id)
         {
-            var questionModel = await _context.QuestionItems.FindAsync(id);
+            var questionModel = await _context.Questions.FindAsync(id);
             if (questionModel == null)
             {
                 return NotFound();
             }
 
-            _context.QuestionItems.Remove(questionModel);
+            _context.Questions.Remove(questionModel);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -119,7 +119,7 @@ namespace webservice.Controllers
 
         private bool QuestionModelExists(long id)
         {
-            return _context.QuestionItems.Any(e => e.Id == id);
+            return _context.Questions.Any(e => e.qID == id);
         }
     }
 }
