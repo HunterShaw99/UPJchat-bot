@@ -82,17 +82,14 @@ data: {
 });
 </script>
 
-<p>yes or no? (trying to figure out how to put these into string values)</p>
-<p>no</p>
+<p id = qe1></p>
+<p id = ans1></p>
 
-<p> up or down?</p>
-<p>up</p>
+<p id = qe2></p>
+<p id = ans2></p>
 
-
-<p>Is Bilitski cool?</p>
-<p>Cool :)</p>
-
-
+<p id = qe3></p>
+<p id = ans3></p>
 <script>
     var q1 = "yes or no?";
     var q2 = "up or down?";
@@ -101,4 +98,19 @@ data: {
     var a1 = "no";
     var a2 = "up";
     var a3 = "Cool :)";
+
+    document.getElementById("qe1").innerHTML = q1;
+    document.getElementById("ans1").innerHTML = a1;
+
+
+    document.getElementById("qe2").innerHTML = q2;
+    document.getElementById("ans2").innerHTML = a2;
+
+    document.getElementById("qe3").innerHTML = q3;
+    document.getElementById("ans3").innerHTML = a3;
+
+
+
+
+
 </script>
