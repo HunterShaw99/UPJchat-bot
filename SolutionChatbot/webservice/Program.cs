@@ -7,11 +7,23 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<QuestionContext>(opt =>
-    opt.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunte\source\repos\upjchatbot\SolutionChatbot\webservice\DataBase\ChatBotStorage.mdf;Integrated Security=True"));
+    opt.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hunte\OneDrive\Documents\College\Junior Year 2\Software Engineering\final\upjchatbot\SolutionChatbot\webservice\DataBase\ChatBotStorage.mdf;Integrated Security=True"));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var myCorsPolicy = "MyCorsPolicy";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(myCorsPolicy,
+        builder =>
+        {
+            builder.AllowAnyOrigin();
+            builder.AllowAnyHeader();
+            builder.AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
 
@@ -21,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(myCorsPolicy);
 
 app.UseHttpsRedirection();
 

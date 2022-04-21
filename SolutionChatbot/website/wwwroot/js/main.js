@@ -87,10 +87,10 @@ function addFeedbackButtonListener(node, response) {
         var index = [].slice.call(container.parentNode.children).indexOf(container);
 
         // use index to get li above this one, and grab text
-        var q = "q: " + msgList.children[index - 1].textContent;
+        var q = msgList.children[index - 1].textContent;
 
         // container's first child is always the message, grab text
-        var a = "a: " + container.children[0].textContent;
+        var a = container.children[0].textContent;
 
         //get sibling button and disable it (change style)
         var siblings = container.children;
@@ -103,10 +103,81 @@ function addFeedbackButtonListener(node, response) {
 
         container.classList.add("feedback-given");
 
-        console.log(q);
-        console.log(a);
-        console.log("response: " + response);
+        postResponse(q, a, response);
     });
+}
+
+function postResponse(question, answer, r) {
+
+    //GET ALL
+    let t = fetch("https://localhost:7115/api/QuestionModels")
+        .then(response => response.json())
+        .then(data => {
+            //json to array
+            arr = Object.entries(data);
+
+            //see if question has been asked before
+            found = null;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i][1].question == question) {
+                    found = i;
+                    break;
+                }
+            }
+
+            var helpful;
+            var nonhelpful;
+            var id;
+            //if question has been asked before; get # responses helpful or nonhelpful, based on which button was clicked.
+            if (found != null) {
+                id = arr[found][1].qID;
+                if (r == "red") {
+                    nonhelpful = arr[found][1].nonhelpful + 1;
+                    helpful = arr[found][1].helpful;
+                } else {
+                    helpful = arr[found][1].helpful + 1;
+                    nonhelpful = arr[found][1].nonhelpful;
+                }
+            } else { //if question has never been asked before, get its new qid
+                id = arr[arr.length - 1][1].qID + 1;
+                if (r == "red") {
+                    nonhelpful = 1;
+                    helpful = 0;
+                } else {
+                    helpful = 1;
+                    nonhelpful = 0;
+                }
+            }
+
+            // formulate json string
+            const o = {
+                question: question,
+                qID: id,
+                helpful: helpful,
+                nonhelpful: nonhelpful
+            }
+            var json = JSON.stringify(o);
+
+            // PUT request if question exists
+            if (found != null) {
+
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: json
+                };
+                fetch(`https://localhost:7115/api/QuestionModels/${id}`, requestOptions);
+
+            } else { // POST request if question doesn't exist
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: json
+                };
+                fetch(`https://localhost:7115/api/QuestionModels`, requestOptions);
+            }
+        });
+
 }
 
 function scrollToBottom() {
