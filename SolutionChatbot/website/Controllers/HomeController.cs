@@ -18,7 +18,7 @@ namespace website.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Reports()
         {
             return View();
         }

@@ -18,6 +18,7 @@ body, html {
 
 .app-name {
     color: #eee;
+    cursor: default;
 }
 
 .nav ul {
@@ -36,9 +37,9 @@ body, html {
     color: #eee;
 }
 
-    .nav a:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
 .body-section {
     background-color: #AAA;
@@ -61,10 +62,17 @@ body, html {
 }
 
 .message-input {
-    background-color: #ddd;
+    background-color: #ccc;
     border: none;
     border-radius: 20px;
     width: 100%;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.message-input:focus {
+    outline: none;
+    background-color: #eee;
 }
 
 .chat-message-list {
@@ -77,9 +85,9 @@ body, html {
     padding: 0;
 }
 
-    .chat-message-list::-webkit-scrollbar {
-        display: none;
-    }
+.chat-message-list::-webkit-scrollbar {
+    display: none;
+}
 
 .message {
     list-style-type: none;
@@ -88,6 +96,7 @@ body, html {
     padding: 8px;
     width: fit-content;
     max-width: 60%;
+    cursor: default;
 }
 
 .user-message {
@@ -98,7 +107,53 @@ body, html {
 .bot-message {
     background-color: lightgreen;
     align-self: start;
+    margin-right: 5px;
 }
+
+.message-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.feedback-given .feedback-button {
+    pointer-events: none;
+}
+
+
+.feedback-button {
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.15);
+    background-blend-mode: multiply;
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.green {
+    background-image: url("../images/green_button.png");
+}
+
+.red {
+    background-image: url("../images/red_button.png");
+}
+
+.feedback-button:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.disabled-button {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.disabled-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 .information-section {
     padding: 0;

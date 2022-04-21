@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "UPJ ChatBot - Reports";
+}
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+
+</script>
+
+
+
+
+<canvas id = "YesorNo", style="width:75%;max-width:500px">
+</canvas>
+
+
+<script>
+var yorn = ["yes","no"];
+var datatest = [85,15];
+var colorpie =["blue","yellow"];
+
+new Chart("YesorNo", {
+type: "pie",
+data: {
+    labels: yorn,
+    datasets: [{
+        backgroundColor: colorpie,
+        data: datatest
+        }]
+    },
+    options: {
+        title: {display: true, text: "Was Question Answered?"}
+    }
+});
+</script>
+
+<canvas id = "QuestionsAsked", style="width:75%;max-width:500px">
+</canvas>
+
+
+<script>
+var weekdays = ["M","Tu", "W", "Th", "F", "Sat", "Sun"];
+var testquestionnums = [10,5, 15, 13, 20, 15, 2,0];
+var colorbar =["red","orange", "yellow","green", "blue","indigo", "violet"];
+
+new Chart("QuestionsAsked", {
+type: "bar",
+data: {
+    labels: weekdays,
+    datasets: [{
+        backgroundColor: colorbar,
+        data: testquestionnums
+        }]
+    },
+    options: {
+        legend: {display: false},
+        title: {display: true, text: "Questions on this day"}
+    }
+});
+</script>
+
+<canvas id = "QuestionsPerWeekRunning", style="width:75%;max-width:500px">
+</canvas>
+
+
+<script>
+var weeks = ["w1", "w2", "w3", "w4"];
+var testquestionweek = [87, 55, 143, 87, 0];
+var colorbarW =["red","orange", "yellow","green", "blue"];
+
+new Chart("QuestionsPerWeekRunning", {
+type: "horizontalBar",
+data: {
+    labels: weeks,
+    datasets: [{
+        backgroundColor: colorbarW,
+        data: testquestionweek
+        }]
+    },
+    options: {
+        legend: {display: false},
+        title: {display: true, text: "Questions on this day"}
+    }
+});
+</script>
+
+<p>yes or no? (trying to figure out how to put these into string values)</p>
+<p>no</p>
+
+<p> up or down?</p>
+<p>up</p>
+
+
+<p>Is Bilitski cool?</p>
+<p>Cool :)</p>
+
+
+<script>
+    var q1 = "yes or no?";
+    var q2 = "up or down?";
+    var q3 = "Is Bilitski cool?";
+
+    var a1 = "no";
+    var a2 = "up";
+    var a3 = "Cool :)";
+</script>
