@@ -31,7 +31,7 @@ namespace webservice.Controllers
 
         // GET: api/QuestionModels/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<QuestionModel>> GetQuestionModel(long id)
+        public async Task<ActionResult<QuestionModel>> GetQuestionModel(int id)
         {
             var questionModel = await _context.Questions.FindAsync(id);
 
@@ -54,7 +54,7 @@ namespace webservice.Controllers
          */
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuestionModel(long id, QuestionModel questionModel)
+        public async Task<IActionResult> PutQuestionModel(int id, QuestionModel questionModel)
         {
             if (id != questionModel.qID)
             {
@@ -103,7 +103,7 @@ namespace webservice.Controllers
         // DELETE: api/QuestionModels/5
         // https://localhost:7115/api/QuestionModels/1
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteQuestionModel(long id)
+        public async Task<IActionResult> DeleteQuestionModel(int id)
         {
             var questionModel = await _context.Questions.FindAsync(id);
             if (questionModel == null)
@@ -117,7 +117,7 @@ namespace webservice.Controllers
             return NoContent();
         }
 
-        private bool QuestionModelExists(long id)
+        private bool QuestionModelExists(int id)
         {
             return _context.Questions.Any(e => e.qID == id);
         }
