@@ -609,25 +609,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hunte\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Hunte\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+      "projectUniqueName": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
       "projectName": "website",
-      "projectPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
-      "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\obj\\",
+      "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+      "packagesPath": "C:\\Users\\Hunte\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -679,7 +674,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
