@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {}
+    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {
+    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
+        "projectUniqueName": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
         "projectName": "webservice",
-        "projectPath": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
-        "packagesPath": "C:\\Users\\Christopher\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\webservice\\obj\\",
+        "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
+        "packagesPath": "C:\\Users\\Hunte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Christopher\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
-                "projectPath": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\website.csproj"
+              "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
+                "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj"
               }
             }
           }
@@ -58,21 +54,21 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.2, )"
+              "version": "[6.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -97,21 +93,17 @@
         }
       }
     },
-    "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
+    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+        "projectUniqueName": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
         "projectName": "website",
-        "projectPath": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
-        "packagesPath": "C:\\Users\\Christopher\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Christopher\\Documents\\SWE\\AChatbotUSETHIS\\upjchatbot\\SolutionChatbot\\website\\obj\\",
+        "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+        "packagesPath": "C:\\Users\\Hunte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Christopher\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
