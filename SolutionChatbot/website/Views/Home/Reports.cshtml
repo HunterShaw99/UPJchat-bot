@@ -7,14 +7,31 @@
 
 
 
-
 <canvas id = "YesorNo", style="width:75%;max-width:500px">
 </canvas>
 
 
+
 <script>
+
+    let t = fetch("https://localhost:7115/api/QuestionModels")
+        .then(response => response.json())
+        .then(data => 
+        {
+         array = Object.entries(data);
+
+    var YES = 0;
+    var NO = 0;
+
+    for (var x = 0; x < array.length;x++)
+    {
+        YES = YES + array[x][1].helpful;
+        NO = NO + array[x][1].nonhelpful;
+    }
+
+
 var yorn = ["yes","no"];
-var datatest = [85,15];
+var datatest = [YES,NO];
 var colorpie =["blue","yellow"];
 
 new Chart("YesorNo", {
@@ -30,6 +47,8 @@ data: {
         title: {display: true, text: "Was Question Answered?"}
     }
 });
+
+});
 </script>
 
 <canvas id = "QuestionsAsked", style="width:75%;max-width:500px">
@@ -37,9 +56,26 @@ data: {
 
 
 <script>
-var weekdays = ["M","Tu", "W", "Th", "F", "Sat", "Sun"];
-var testquestionnums = [10,5, 15, 13, 20, 15, 2,0];
-var colorbar =["red","orange", "yellow","green", "blue","indigo", "violet"];
+
+
+
+    let e = fetch("https://localhost:7115/api/QuestionModels")
+        .then(response => response.json())
+        .then(data => 
+        {
+         array = Object.entries(data);
+
+    var TOTAL = 0;
+    for (var x = 0; x < array.length;x++)
+    {
+      TOTAL = TOTAL+1;
+    }
+
+
+    
+var weekdays = ["Total"];
+var testquestionnums = [TOTAL,0];
+var colorbar =["blue"];
 
 new Chart("QuestionsAsked", {
 type: "bar",
@@ -55,32 +91,11 @@ data: {
         title: {display: true, text: "Questions on this day"}
     }
 });
-</script>
 
-<canvas id = "QuestionsPerWeekRunning", style="width:75%;max-width:500px">
-</canvas>
-
-
-<script>
-var weeks = ["w1", "w2", "w3", "w4"];
-var testquestionweek = [87, 55, 143, 87, 0];
-var colorbarW =["red","orange", "yellow","green", "blue"];
-
-new Chart("QuestionsPerWeekRunning", {
-type: "horizontalBar",
-data: {
-    labels: weeks,
-    datasets: [{
-        backgroundColor: colorbarW,
-        data: testquestionweek
-        }]
-    },
-    options: {
-        legend: {display: false},
-        title: {display: true, text: "Questions on this day"}
-    }
 });
 </script>
+
+
 
 <p id = qe1></p>
 <p id = ans1></p>
