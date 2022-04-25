@@ -105,14 +105,67 @@ data: {
 
 <p id = qe3></p>
 <p id = ans3></p>
-<script>
-    var q1 = "yes or no?";
-    var q2 = "up or down?";
-    var q3 = "Is Bilitski cool?";
 
-    var a1 = "no";
-    var a2 = "up";
-    var a3 = "Cool :)";
+<script>
+
+    let z = fetch("https://localhost:7115/api/QuestionModels")
+        .then(response => response.json())
+        .then(data => 
+        {
+         array = Object.entries(data);
+
+    var Highest = 0;
+    var HighQuest1 = "Quest 1"
+    for (var x = 0; x < array.length;x++)
+    {
+      if (array[x][1].nonhelpful + array[x][1].helpful > Highest)
+      {
+        Highest = array[x][1].nonhelpful + array[x][1].helpful;
+        HighQuest1 = array[x][1].question;
+      }
+    }
+
+
+    Highest = 0;
+    var HighQuest2 = "Quest 2"
+    for (var x = 0; x < array.length;x++)
+    {
+      if (array[x][1].question == HighQuest1)
+      {
+          HighQuest2 = HighQuest2;
+      }
+      else if (array[x][1].nonhelpful + array[x][1].helpful > Highest)
+      {
+
+        Highest = array[x][1].nonhelpful + array[x][1].helpful;
+        HighQuest2 = array[x][1].question;
+      }
+    }
+
+    Highest = 0;
+    var HighQuest3 = "Quest 3"
+    for (var x = 0; x < array.length;x++)
+    {
+      if (array[x][1].question == HighQuest1 || array[x][1] == HighQuest2)
+      {
+          HighQuest3 = HighQuest3;
+      }
+      else if (array[x][1].nonhelpful + array[x][1].helpful > Highest)
+      {
+
+        Highest = array[x][1].nonhelpful + array[x][1].helpful;
+        HighQuest3 = array[x][1].question;
+      }
+    }
+
+
+    var q1 = HighQuest1;
+    var q2 = HighQuest2;
+    var q3 = HighQuest3;
+
+    var a1 = "a1";
+    var a2 = "a2";
+    var a3 = "a3";
 
     document.getElementById("qe1").innerHTML = q1;
     document.getElementById("ans1").innerHTML = a1;
@@ -123,8 +176,9 @@ data: {
 
     document.getElementById("qe3").innerHTML = q3;
     document.getElementById("ans3").innerHTML = a3;
+ });
 
-
+   
 
 
 
