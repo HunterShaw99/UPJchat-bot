@@ -14,8 +14,19 @@ var sessionAttributes = {};
 input.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
+
         sendUserMessage(input.value);
 
+        postToDatabase(input.value);
+
+        // TODO: DELETE THIS
+        input.value = "";
+        setTimeout(function () {
+            sendBotMessage("hello", true);
+        }, 500);
+
+        // TODO: UNCOMMENT
+        /*
         if (input && input.value && input.value.trim().length > 0) {
             var text = input.value.trim();
             // clear input's value
@@ -46,6 +57,7 @@ input.addEventListener("keyup", function (event) {
             });
             input.locked = false;
         }
+        */
         
     }
 });
@@ -182,6 +194,71 @@ function postResponse(question, answer, r) {
                     helpful = 1;
                     nonhelpful = 0;
                 }
+            }
+
+            // formulate json string
+            const o = {
+                question: question,
+                qID: id,
+                helpful: helpful,
+                nonhelpful: nonhelpful
+            }
+            var json = JSON.stringify(o);
+
+            // PUT request if question exists
+            if (found != null) {
+
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: json
+                };
+                fetch(`https://localhost:7115/api/QuestionModels/${id}`, requestOptions);
+
+            } else { // POST request if question doesn't exist
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: json
+                };
+                fetch(`https://localhost:7115/api/QuestionModels`, requestOptions);
+            }
+        });
+
+}
+
+
+
+function postToDatabase(question) {
+
+    //GET ALL
+    let t = fetch("https://localhost:7115/api/QuestionModels")
+        .then(response => response.json())
+        .then(data => {
+            //json to array
+            arr = Object.entries(data);
+
+            //see if question has been asked before
+            found = null;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i][1].question == question) {
+                    found = i;
+                    break;
+                }
+            }
+
+            var helpful;
+            var nonhelpful;
+            var id;
+            //if question has been asked before; get # responses helpful or nonhelpful, based on which button was clicked.
+            if (found != null) {
+                id = arr[found][1].qID;
+                helpful = arr[found][1].helpful + 1;
+                nonhelpful = arr[found][1].nonhelpful;
+            } else { //if question has never been asked before, get its new qid
+                id = arr[arr.length - 1][1].qID + 1;
+                helpful = 0;
+                nonhelpful = 0;
             }
 
             // formulate json string

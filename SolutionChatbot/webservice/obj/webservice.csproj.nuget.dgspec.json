@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {}
+    "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {
+    "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
+        "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
         "projectName": "webservice",
-        "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
-        "packagesPath": "C:\\Users\\Hunte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\webservice\\obj\\",
+        "projectPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\webservice\\webservice.csproj",
+        "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\webservice\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -28,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
-                "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj"
+              "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
+                "projectPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj"
               }
             }
           }
@@ -89,22 +93,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
+    "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+        "projectUniqueName": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
         "projectName": "website",
-        "projectPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
-        "packagesPath": "C:\\Users\\Hunte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hunte\\source\\repos\\upjchatbot\\SolutionChatbot\\website\\obj\\",
+        "projectPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\website.csproj",
+        "packagesPath": "C:\\Users\\hunte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hunte\\OneDrive\\Documents\\College\\Junior Year 2\\Software Engineering\\final\\upjchatbot\\SolutionChatbot\\website\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hunte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -156,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
