@@ -68,7 +68,7 @@ data: {
     var TOTAL = 0;
     for (var x = 0; x < array.length;x++)
     {
-      TOTAL = TOTAL+1;
+      TOTAL = TOTAL+array[x][1].nonhelpful+array[x][1].helpful;
     }
 
 
@@ -97,6 +97,8 @@ data: {
 
 
 
+<p>Top 3 Questions:</p>
+
 <p id = qe1></p>
 <p id = ans1></p>
 
@@ -105,6 +107,11 @@ data: {
 
 <p id = qe3></p>
 <p id = ans3></p>
+
+
+<p>Top unanswered question::</p>
+<p id = ua1></p>
+<p id = ba1></p>
 
 <script>
 
@@ -146,7 +153,7 @@ data: {
     var HighQuest3 = "Quest 3"
     for (var x = 0; x < array.length;x++)
     {
-      if (array[x][1].question == HighQuest1 || array[x][1] == HighQuest2)
+      if (array[x][1].question == HighQuest1 || array[x][1].question == HighQuest2)
       {
           HighQuest3 = HighQuest3;
       }
@@ -167,6 +174,26 @@ data: {
     var a2 = "a2";
     var a3 = "a3";
 
+
+    var worst = 0;
+    var badQuest = "No bad/unanswered question";
+
+    for (var y = 0; x < array.length;y++)
+    {
+      if (array[y][1].nonhelpful > array[y][1].helpful)
+      {
+          if (array[y][1].nonhelpful > worst)
+          {
+             worst = array[y][1].nonhelpful;
+             badQuest = array[y][1].question;
+          }
+      }
+    }
+
+    var bques = badQuest;
+    var badan = "no ans";
+
+
     document.getElementById("qe1").innerHTML = q1;
     document.getElementById("ans1").innerHTML = a1;
 
@@ -176,10 +203,11 @@ data: {
 
     document.getElementById("qe3").innerHTML = q3;
     document.getElementById("ans3").innerHTML = a3;
+
+
+    document.getElementById("ua1").innerHTML = badQuest;
+    document.getElementById("ba1").innerHTML = badan;
+
  });
-
-   
-
-
 
 </script>
