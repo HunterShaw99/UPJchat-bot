@@ -23,8 +23,8 @@ input.addEventListener("keyup", function (event) {
             input.locked = true;
 
             var params = {
-                botAlias: '$LATEST',
-                botName: 'Schwabot',
+                botAlias: 'Test',
+                botName: 'schwabot_',
                 inputText: text,
                 userId: lexUserId,
                 sessionAttributes: sessionAttributes
