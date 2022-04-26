@@ -1,17 +1,52 @@
 ﻿var input = document.getElementsByClassName("message-input")[0];
 var msgList = document.querySelector(".chat-message-list");
 
+// Initialize the Amazon Cognito credentials provider
+AWS.config.region = 'us-east-1'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'us-east-1:8416ff37-a05e-4cef-b0d3-164446edc49a',
+});
+
+var lexruntime = new AWS.LexRuntime();
+var lexUserId = 'Schwabot-test' + Date.now();
+var sessionAttributes = {};
+
 input.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         sendUserMessage(input.value);
 
-        // clear input's value
-        input.value = "";
+        if (input && input.value && input.value.trim().length > 0) {
+            var text = input.value.trim();
+            // clear input's value
+            input.value = "";
+            input.locked = true;
 
-        setTimeout(function () {
-            sendBotMessage(true);
-        }, 500);
+            var params = {
+                botAlias: '$LATEST',
+                botName: 'Schwabot',
+                inputText: text,
+                userId: lexUserId,
+                sessionAttributes: sessionAttributes
+            };
+
+            lexruntime.postText(params, function (err, data) {
+                if (err) {
+                    console.log(err, err.stack);
+                    setTimeout(function () {
+                        sendBotMessage(err.message, true);
+                    }, 500);
+                }
+                if (data) { 
+                    sessionAttributes = data.sessionAttributes;
+                    setTimeout(function () {
+                        sendBotMessage(data.message, true);
+                    }, 500);
+                }
+            });
+            input.locked = false;
+        }
+        
     }
 });
 
@@ -21,8 +56,8 @@ function sendUserMessage(text) {
 
 // param = null --- normal message with no feedback buttons
 // param != null --- message with feedback buttons
-function sendBotMessage(feedback) {
-    var text = "Response from the bot.";
+function sendBotMessage(text, feedback) {
+    var text = text;
 
     if (feedback === null) {
         sendChatMessage(text, "bot");
