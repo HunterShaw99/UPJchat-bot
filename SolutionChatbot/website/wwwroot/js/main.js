@@ -22,7 +22,8 @@ input.addEventListener("keyup", function (event) {
         // TODO: DELETE THIS
         input.value = "";
         setTimeout(function () {
-            sendBotMessage("hello", true);
+            sendBotMessage("https://www.google.com this is a clickable link." +
+                "And this https://www.reddit.com .  This is another clickable link https://www.google.com", true);
         }, 500);
 
         // TODO: UNCOMMENT
@@ -89,9 +90,58 @@ function sendBotMessage(text, feedback) {
  * @param {string} sender who is sending the message {"user", "bot", "bot-feedback"}
  */
 function sendChatMessage(text, sender) {
+
+    //create message
     var msg = document.createElement("li");
-    msg.appendChild(document.createTextNode(text));
     msg.classList.add("message", "user-message");
+
+    //check for url
+    //LINKS IN MESSAGE MUST BE FORMATTED: start with 'http', ' ' (space) immediately after
+    //                                                   (unless end of url is very last char in message (no punctuation))
+    let beginning = 0;
+    let startIndex = text.indexOf("http")
+    let endIndex = 0;
+    // if url is found
+    if (startIndex != -1) {
+        var container = document.createElement("span");
+
+        //loop to handle multiple urls in one message
+        while (startIndex != -1) {
+            endIndex = text.indexOf(" ", [startIndex + 1]);
+            if (endIndex == -1) {
+                endIndex = text.length;
+            }
+
+            const msgStart = document.createTextNode(text.substring(beginning, startIndex));
+
+            const msgUrl = document.createElement('a');
+            msgUrl.href = text.substring(startIndex, endIndex);
+            msgUrl.textContent = text.substring(startIndex, endIndex);
+
+            console.log("start" + startIndex);
+            console.log(endIndex);
+        
+            container.appendChild(msgStart);
+            container.appendChild(msgUrl);
+
+            //loop control
+            if (endIndex == text.length) {
+                break;
+            }
+            startIndex = text.indexOf("http", [endIndex]);
+            beginning = endIndex;
+
+        }
+
+        let msgEnd = document.createTextNode(text.substring(endIndex));
+
+        container.appendChild(msgEnd);
+
+        msg.appendChild(container);
+    } else {
+        msg.appendChild(document.createTextNode(text));
+    }
+
 
     if (sender == "user") {
         msg.classList.add("user-message");
